@@ -1,0 +1,167 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.container {
+    margin: 40px auto 40px auto;
+    width: 320px;
+    background-color: cadetblue;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.container .iconeUser {
+    text-align: center;
+    margin: 10px 0px;
+}
+
+/* Inputs */
+.inputs {
+    width: 100%;
+}
+
+.inputs input {
+    outline: none;
+    border: 0;
+    border-radius: 7px;
+    height: 29px;
+    margin-bottom: 5px;
+}
+
+.inputs .ddd {
+    text-align: center;
+    width: 40px;
+    margin-right: 5px;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.ddd, input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.inputs .nome {
+    width: 100%;
+    padding-left: 6px;
+}
+
+.inputs .numero {
+    text-align: center;
+    flex-grow: 1;
+    margin-right: 5px;
+}
+.inputs .descricao{
+    width: 100%;
+    padding: 0 5px;
+}
+.inputs button {
+    padding: 0 5px;
+    border: 0;
+    height: 29px;
+    border: 3px;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.inputs .primeiro {
+    width: 100%;
+}
+
+.inputs .segundo {
+    display: flex;
+}
+
+/* Lista */
+.lista {
+    margin-top: 5px;
+    height: 260px;
+    overflow: auto;
+}
+
+.lista::-webkit-scrollbar {
+    width: 12px;
+    background-color: whitesmoke;
+}
+
+.lista::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: darkgray;
+}
+
+.contato {
+    margin-bottom: 5px;
+    display: flex;
+    font-size: 15px;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+.contato>div {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 10px;
+
+}
+
+.contato:hover {
+    background-color: rgb(149, 224, 226);
+}
+
+.contato img {
+    width: 30px;
+    height: 32px;
+    margin-right: 5px;
+}
+
+.contato button {
+    font-size: 11px;
+    align-self: center;
+    height: 20px;
+    padding: 0 5px;
+    background-color: rgba(0, 0, 0, 0.836);
+    color: white;
+    border: 0;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/*-------- Primeiro container-------- */
+
+.respostas{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/*-------- Segundo container-------- */
+#segundo>button {
+    font-size: 11px;
+    align-self: center;
+    height: 20px;
+    padding: 0 5px;
+    background-color: rgba(0, 0, 0, 0.836);
+    color: white;
+    border: 0;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+#terceiro .numero{
+    margin-right: 0;
+}
+
+/*--- resposta do #primeiro e #segundo */
+#res,
+#resUp,
+#resFilter {
+    height: 30px;
+    color: blue;
+}

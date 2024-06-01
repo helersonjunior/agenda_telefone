@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="shortcut icon" href="./assets/images/telefone.png" type="image/x-icon">
+    <title>Contatos</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="iconeUser"><img src="./assets/images/telefone.png"></div>
+
+        <form id="primeiro" class="inputs">
+            <div class="primeiro">
+                <input class="nome" autocomplete="off" name="nome" type="text" placeholder="Nome" maxlength="30">
+                <input class="descricao" autocomplete="off" name="descricao" type="text" placeholder="Descrição (opcional)"
+                    maxlength="50">
+            </div>
+            <div class="segundo">
+                <input class="ddd" name="ddd" type="number" autocomplete="off" placeholder="DDD" min="0" max="99"
+                    oninput="validateDDD(this)">
+                <input class="numero" name="numero" type="number" autocomplete="off" placeholder="Numero"
+                    oninput="validateNumero(this)">
+                <button onclick="send()">Salvar</button>
+            </div>
+        </form>
+        <div class="respostas">
+            <div id="res"></div>
+            <div id="contagem"></div>
+        </div>
+
+        <div class="lista">
+            <!-- <div class="contato">
+                <img src="./assets/images/icon.png">
+                <div>
+                    <div>
+                        <div>junior</div>
+                        <div>92922283636</div>
+                    </div>
+                        <button onclick="apagar()">Excluir</button>
+                </div>
+            </div>
+            <div class="contato">
+                <img src="./assets/images/icon.png">
+                <div>
+                    <div>
+                        <div>junior</div>
+                        <div>92922283636</div>
+                    </div>
+                        <button onclick="apagar()">Excluir</button>
+                </div>
+            </div> -->
+        </div>
+    </div>
+
+
+    <!---------Segundo----------- -->
+    <div class="container">
+        <div class="iconeUser"><img src="./assets/images/icon.png"></div>
+        <form id="segundo" class="inputs">
+            <div class="primeiro">
+                <input disabled class="nome" name="nome" type="text" placeholder="nome" autocomplete="off"
+                    maxlength="35">
+            </div>
+            <div class="segundo">
+                <input name="hidden" type="hidden">
+                <input disabled class="ddd" name="ddd" type="number" autocomplete="off" placeholder="DDD"  oninput="validateDDD(this)">
+                <input disabled class="numero" name="numero" type="number" autocomplete="off" placeholder="Numero"
+                    oninput="validateNumero(this)">
+                <button disabled id="btnUp" onclick="update()">Atualizar</button>
+            </div>
+
+            <div id="btns">
+
+            </div>
+
+        </form>
+
+        <div class="lista">
+            <div id="resUp">
+
+            </div>
+            <div id="info">
+
+            </div>
+        </div>
+    </div>
+
+    <!----------Terceiro-------------->
+    <div class="container">
+        <div class="iconeUser"><img src="./assets/images/lupa-de-pesquisa.png"></div>
+        <form id="terceiro" class="inputs">
+            <div class="primeiro">
+                <input class="nome" id="nomeF" type="text" autocomplete="off" placeholder="Nome" maxlength="35">
+            </div>
+            <div class="segundo">
+                <input class="ddd" id="dddF" type="number" autocomplete="off" placeholder="DDD"  oninput="validateDDD(this)">
+                <input class="numero" id="numeroF" type="number" autocomplete="off" placeholder="Numero"  oninput="validateNumero(this)">
+
+            </div>
+        </form>
+        <div id="resFilter"></div>
+        <div class="lista lista3">
+            <!--  -->
+        </div>
+    </div>
+
+    <script>
+        function validateDDD(input) {
+            // Limitar a dois dígitos
+            if (input.value.length > 2) {
+                input.value = input.value.slice(0, 2);
+            }
+
+            // Garantir que o valor esteja dentro do intervalo permitido
+            if (input.value !== "") {
+                let value = parseInt(input.value, 10);
+                if (value < 0) {
+                    input.value = 0;
+                } else if (value > 99) {
+                    input.value = 99;
+                }
+            }
+        }
+
+        function validateNumero(input) {
+            // Limitar a dois dígitos
+            if (input.value.length > 9) {
+                input.value = input.value.slice(0, 9);
+            }
+
+            // Garantir que o valor esteja dentro do intervalo permitido
+            if (input.value !== "") {
+                let value = parseInt(input.value, 10);
+                if (value < 0) {
+                    input.value = 0;
+                } else if (value > 999999999) {
+                    input.value = input.value.slice(0, 9);
+                }
+            }
+        }
+    </script>
+
+    <script src="./assets/js/estados.js"></script>
+    <script src="./assets/js/script.js"></script>
+</body>
+
+</html>
