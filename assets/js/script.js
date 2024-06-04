@@ -29,6 +29,7 @@ ddd.addEventListener('input', () => {
     console.log(estadoSelect)
     if (estadoSelect[0]) {
         estado = estadoSelect[0]
+        res.style.color = 'blue'
         res.innerHTML = `<p>${estadoSelect[0].nome}</p>`
 
     } else {
@@ -41,7 +42,11 @@ ddd.addEventListener('input', () => {
 // função que envia os dados pra salvar no array
 function send() {
 
-    if (!ddd.value || !nome.value || !numero.value) return res.innerText = 'Preencha todos os campos'
+    if (!ddd.value || !nome.value || !numero.value){
+        res.style.color = 'red'
+        res.innerText = 'Preencha todos os campos'
+        return
+    } 
 
     //--push
     numeros.push({
@@ -58,6 +63,7 @@ function send() {
     nome.value = ''
     numero.value = ''
 
+    res.style.color = 'blue'
     res.innerText = 'Adicionado'
     setTimeout(() => res.innerText = '', 2000)
     setLocalStorage()
@@ -138,6 +144,7 @@ function selected(e) {
         info.innerHTML = `
         <p>Estado: ${numeros[e].sigla}</p>
         <p>Status: ${numeros[e].status}</p>
+        <p>Numero: ${numeros[e].numeroCompleto} </p>
         `
 
         InputsDisabled(false)
@@ -174,12 +181,14 @@ function update() {
     numeros[index].ddd = dddUp.value
     numeros[index].nome = nomeUp.value
     numeros[index].numero = numeroUp.value
+    numeros[index].numeroCompleto = `${dddUp.value}${numeroUp.value}`
     numeros[index].sigla = siglaUp // estadoUp.sigla
 
     resUp.innerText = 'Atualizado'
     info.innerHTML = `
     <p>Sigla: ${numeros[index].sigla}</p>
     <p>Status: ${numeros[index].status}</p>
+    <p>Numero: ${numeros[index].numeroCompleto}</p>
     `
 
     setTimeout(() => resUp.innerText = '', 2000)
